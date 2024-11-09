@@ -1,25 +1,242 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
-{{>breedheader}}    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Gallery</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: rgb(11, 12, 8);
+            color: antiquewhite;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
 
-    <section class="home-slider inner-page owl-carousel">
-      <div class="slider-item" style="background-image: url('../img/labra.jpg'); background-position: 45% 45%;">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate">
-              <h1>Labrador</h1>
-              <p class="mb-5">Lorem ipsum dolor sit amet,  Commodi unde impedit, <br> necessitatibus, corrupti reiciendis.</p>
-              <p><a href="#abou" class="btn btn-white btn-outline-white">Explore</a></p>
-            </div>
-          </div>
+        h1 {
+            color: #ffd700;
+            margin-top: 20px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            width: 350px;
+            height: 350px;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .info {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        /* Form styling */
+        .order-form {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 20px;
+            background-color: #149f68;
+            width: 300px;
+            border-radius: 10px;
+            color: antiquewhite;
+        }
+
+        .order-form label,
+        .order-form input {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        .order-form button {
+            margin-top: 20px;
+            padding: 10px;
+            width: 100%;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .order-form button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Our Available Labrador</h1>
+
+    <div class="gallery">
+        <div class="gallery-item" onclick="showOrderForm('Dog 1', 500, '2 years')">
+            <img src="https://i.pinimg.com/236x/36/37/85/363785f62617303059801da782ec3c44.jpg" alt="Dog 1">
+            <div class="info">Price: $500 | Age: 2 years</div>
         </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 2', 600, '3 years')">
+            <img src="https://i.pinimg.com/236x/5c/28/a5/5c28a5f8e0f716f30f237dc9bfcaccb6.jpg" alt="Dog 2">
+            <div class="info">Price: $600 | Age: 3 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 3', 550, '2.5 years')">
+            <img src="https://i.pinimg.com/236x/6b/20/cf/6b20cf7df9e279e0982bda99396b71b8.jpg" alt="Dog 3">
+            <div class="info">Price: $550 | Age: 2.5 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 4', 700, '4 years')">
+            <img src="https://i.pinimg.com/236x/9c/42/7a/9c427a552fbe7ee441dfd66a1231a107.jpg" alt="Dog 4">
+            <div class="info">Price: $700 | Age: 4 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 5', 650, '3.5 years')">
+            <img src="https://i.pinimg.com/236x/dd/0e/b1/dd0eb16b37234d6e102ed760cd7c25b7.jpg" alt="Dog 5">
+            <div class="info">Price: $650 | Age: 3.5 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 6', 550, '2 years')">
+            <img src="https://i.pinimg.com/236x/3d/40/5c/3d405c0f9cc41a0ad23412d6f2e5188f.jpg" alt="Dog 6">
+            <div class="info">Price: $550 | Age: 2 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 7', 600, '3 years')">
+            <img src="https://i.pinimg.com/236x/85/af/17/85af17848d2843827cbfbc8242fa3adc.jpg" alt="Dog 7">
+            <div class="info">Price: $600 | Age: 3 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 8', 700, '4 years')">
+            <img src="https://i.pinimg.com/474x/0e/83/b6/0e83b656ce5bbf743a43855dd8190045.jpg" alt="Dog 8">
+            <div class="info">Price: $700 | Age: 4 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 9', 650, '3.5 years')">
+            <img src="https://i.pinimg.com/236x/3c/c2/36/3cc2365e4fde49abd8b633e49468ad2d.jpg" alt="Dog 9">
+            <div class="info">Price: $650 | Age: 3.5 years</div>
+        </div>
+        <div class="gallery-item" onclick="showOrderForm('Dog 10', 550, '2 years')">
+            <img src="https://i.pinimg.com/236x/4f/93/fe/4f93fe992dfcfa00d4023868f34652e5.jpg" alt="Dog 10">
+            <div class="info">Price: $550 | Age: 2 years</div>
+        </div>
+         <div class="gallery-item" onclick="showOrderForm('Dog 11', 650, '3 years')">
+            <img src="https://i.pinimg.com/236x/96/48/cd/9648cdfb274d06d7b52a1ac954c693a2.jpg" alt="Dog 11">
+            <div class="info">Price: $650 | Age: 3 years</div>
+        </div>
+         <div class="gallery-item" onclick="showOrderForm('Dog 12', 350, '1 years')">
+            <img src="https://i.pinimg.com/236x/80/b1/c4/80b1c46c5d7b099b4da30e624a7211de.jpg" alt="Dog 12">
+            <div class="info">Price: $250 | Age: 1 years</div>
+        </div>
+        <!-- Add more pet images as needed -->
+    </div>
 
-      </div>
-    </section> -->
-    <br>
+     <div class="order-form" id="orderForm">
+        <h2>Order Form</h2>
+        <form id="petOrderForm" onsubmit="submitOrder(event)">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
 
-{{>otherfooter}}
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" required>
 
-   </html>
+            <label for="phone">Your Phone</label>
+            <input type="text" id="phone" name="phone" required>
+
+            <label for="address">Your Address</label>
+            <input type="text" id="address" name="address" required>
+
+            <label for="petName">Pet Name</label>
+            <input type="text" id="petName" name="petName" readonly>
+            <p>Watch this video about the pet</p>
+            <video width="320" height="240" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=2cf51bec271650d2a49ca8c6e0a0089f613214d307dfb0f7449c7fcda0f9f448JmltdHM9MTczMDkzNzYwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9YWJvdXQrZ29sZGVuK3JldHJpZXZlcit2aWRlbyZtaWQ9NUQ0QkMzMjYxQTIxMzkzRDI4RjI1RDRCQzMyNjFBMjEzOTNEMjhGMiZGT1JNPVZJUkU&ntb=1" type="video/mp4">
+            </video>
+
+            <p>Payment</p>
+            <img style="width: 200px;"
+                src="https://th.bing.com/th/id/OIP.KnkzM28g5HTWkoC8_2za7gHaEc?w=750&h=450&rs=1&pid=ImgDetMain">
+
+            <label for="termsAndConditions">Terms and Conditions
+                <input type="checkbox" id="termsAndConditions" name="termsAndConditions" required>
+            </label>
+
+            <div class="file-upload">
+                <label for="paymentScreenshot">Upload Payment Screenshot</label>
+                <input type="file" id="paymentScreenshot" name="paymentScreenshot" accept="image/*" required>
+            </div>
+            <a
+                href="https://www.bing.com/ck/a?!&&p=696dacbf0b854a2991ba0947981979d0331a4ad1283315dcdc8f6f1daa8480ceJmltdHM9MTczMDkzNzYwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&psq=about+golden+retriever&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR29sZGVuX1JldHJpZXZlcg&ntb=1">Know
+                about the pet</a>
+            <button type="submit">Order Pet</button>
+        </form>
+    </div>
+
+    <script>
+        function showOrderForm(petName, price, age) {
+            document.getElementById('orderForm').style.display = 'block';
+            document.getElementById('petName').value = petName;
+            // You can also display price and age in the form or just keep them in the info section
+        }
+
+         async function submitOrder(event) {
+    event.preventDefault();
+
+    const formElement = document.getElementById('petOrderForm');
+    const formData = new FormData(formElement);
+
+    // Log the form data to confirm values
+    for (let [key, value] of formData.entries()) {
+        console.log(key, value);
+    }
+
+    try {
+        const response = await fetch('http://localhost:3000/submit_order', {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            alert("Order submitted successfully!");
+            formElement.reset();
+        } else {
+            alert("Failed to submit order. Please try again.");
+        }
+    } catch (error) {
+        console.error("Error:", error);
+        alert("An error occurred. Please try again later.");
+    }
+}
+    </script>
+
+</body>
+
+</html>

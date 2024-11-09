@@ -14,5 +14,3 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/loyalRegi
 }).catch(()=>{
     console.log("db not connected");
 })
-
-

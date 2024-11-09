@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Pet Tour</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: #7cc6fe;
+            color: white;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .pet-card {
+            width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            text-align: center;
+        }
+        .pet-card h2 {
+            margin: 0;
+            padding: 10px;
+            background-color: #7cc6fe;
+            color: white;
+        }
+        .pet-video {
+            width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+        .pet-info {
+            padding: 15px;
+        }
+        .pet-info p {
+            margin: 10px 0;
+            color: #666;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #7cc6fe;
+            color: white;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Explore Our Wonderful Pets</h1>
+
+    <div class="container">
+        <!-- Dog Section -->
+        <div class="pet-card">
+            <h2>Dog</h2>
+            <video class="pet-video" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=a3123f20f883b53458f5433a898b7d5c65d4f05985fe1f9dbf9a066d31218bd2JmltdHM9MTczMTAyNDAwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9ZG9nK2N1dGUrdmlkZW9zK2luK3N3aW1taW5nK3Bvb2wmbWlkPUY2NEJEMzM5Njg5ODU1MTRDOUE4RjY0QkQzMzk2ODk4NTUxNEM5QTgmRk9STT1WSVJF&ntb=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="pet-info">
+                <p>Dogs are known for their loyalty, intelligence, and companionship. They make excellent pets for families.</p>
+            </div>
+        </div>
+
+        <!-- Cat Section -->
+        <div class="pet-card">
+            <h2>Cat</h2>
+            <video class="pet-video" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=307f95b7e2cb15c8dc3dc3a4f4be960c3c94a5156a642384e2f550b869454c5fJmltdHM9MTczMTAyNDAwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9Y2F0K2N1dGUrdmlkZW9zK29ubHkrY2F0JnFzPW4mc3A9LTEmZ2hjPTEmbHE9MCZwcT1jYXQrY3V0ZSt2aWRlb3Mrb25seStjYXQmc2M9MTAtMjQmc2s9JmN2aWQ9NjYxMTdENzhBNUYzNEZEMEJFMkFDODk0QzZEQUM3NzQmZ2hzaD0wJmdoYWNjPTAmZ2hwbD0mcnU9JTJmc2VhcmNoJTNmcSUzZGNhdCUyYmN1dGUlMmJ2aWRlb3MlMmJvbmx5JTJiY2F0JTI2cXMlM2RuJTI2Zm9ybSUzZFFCUkUlMjZzcCUzZC0xJTI2Z2hjJTNkMSUyNmxxJTNkMCUyNnBxJTNkY2F0JTJiY3V0ZSUyYnZpZGVvcyUyYm9ubHklMmJjYXQlMjZzYyUzZDEwLTI0JTI2c2slM2QlMjZjdmlkJTNkNjYxMTdENzhBNUYzNEZEMEJFMkFDODk0QzZEQUM3NzQlMjZnaHNoJTNkMCUyNmdoYWNjJTNkMCUyNmdocGwlM2QmbW1zY249dndyYyZtaWQ9MUNFQjZGRjA2OUYxQkQ0ODVERTExQ0VCNkZGMDY5RjFCRDQ4NURFMSZGT1JNPVdSVk9SQw&ntb=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="pet-info">
+                <p>Cats are independent, playful, and affectionate. They make great pets for those who enjoy a relaxed atmosphere.</p>
+            </div>
+        </div>
+
+        <!-- Rabbit Section -->
+        <div class="pet-card">
+            <h2>Rabbit</h2>
+            <video class="pet-video" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=2c02fbaa964c49dd6f99f934f65c21fab60bc61a5024ad020e824de266ee95a8JmltdHM9MTczMTAyNDAwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9cmFiYml0K3ZpZGVvJm1pZD0yQTI5Qzg5Q0QxNTg5RTE0MEU2MjJBMjlDODlDRDE1ODlFMTQwRTYyJkZPUk09VklSRQ&ntb=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="pet-info">
+                <p>Rabbits are gentle and social creatures that love to hop around. They are a great choice for calm households.</p>
+            </div>
+        </div>
+
+        <!-- Bird Section -->
+        <div class="pet-card">
+            <h2>Bird</h2>
+            <video class="pet-video" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=f8c354026ef9bb6eca82265caef2a6e85d7621bf372bbfe6ca608c9f63490f50JmltdHM9MTczMTAyNDAwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9QmlyZCt2aWRlbyZxcz1uJnNwPS0xJmdoYz0xJmxxPTAmcHE9YmlyZCt2aWRlbyZzYz0xMC0xMCZzaz0mY3ZpZD0xMkU0MzMwMzA2Mjc0QUNDQTk4RkYyRDQ2ODhGQTJCQyZnaHNoPTAmZ2hhY2M9MCZnaHBsPSZydT0lMmZzZWFyY2glM2ZxJTNkQmlyZCUyYnZpZGVvJTI2cXMlM2RuJTI2Zm9ybSUzZFFCUkUlMjZzcCUzZC0xJTI2Z2hjJTNkMSUyNmxxJTNkMCUyNnBxJTNkYmlyZCUyYnZpZGVvJTI2c2MlM2QxMC0xMCUyNnNrJTNkJTI2Y3ZpZCUzZDEyRTQzMzAzMDYyNzRBQ0NBOThGRjJENDY4OEZBMkJDJTI2Z2hzaCUzZDAlMjZnaGFjYyUzZDAlMjZnaHBsJTNkJm1tc2NuPXZ3cmMmbWlkPUMzN0Q5QURDRjIyQjk3OERDNzkxQzM3RDlBRENGMjJCOTc4REM3OTEmRk9STT1XUlZPUkM&ntb=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="pet-info">
+                <p>Birds are intelligent and social. They enjoy human interaction and make wonderful companions for bird lovers.</p>
+            </div>
+        </div>
+        
+        <!-- Fish Section -->
+        <div class="pet-card">
+            <h2>Fish</h2>
+            <video class="pet-video" controls>
+                <source src="https://www.bing.com/ck/a?!&&p=07be6a1344b8f754ddee941125e13390fa015e9b291d2332aadd48562a1b012aJmltdHM9MTczMTAyNDAwMA&ptn=3&ver=2&hsh=4&fclid=06c432c3-3145-615c-29d9-27d830b2603b&u=a1L3ZpZGVvcy9yaXZlcnZpZXcvcmVsYXRlZHZpZGVvP3E9ZmlzaCt2aWRlbytpbit0YW5rJm1pZD1EMDFBMjg2NTNDQzU5QkVGN0IwRUQwMUEyODY1M0NDNTlCRUY3QjBFJkZPUk09VklSRQ&ntb=1" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="pet-info">
+                <p>Fish bring a calming presence and are perfect for those who enjoy observing nature. They require minimal upkeep.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Discover more about each pet and find the perfect companion for your lifestyle!</p>
+    </div>
+</body>
+</html>
